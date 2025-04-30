@@ -1,0 +1,5 @@
+<resources>
+    <string name="watch_face_name">LCD-black</string>
+    <string name="complication_color_label">Complication color</string>
+    <string name="clock_color_label">Clock color</string>
+</resources>

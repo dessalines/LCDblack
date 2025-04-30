@@ -8,9 +8,9 @@
       <ColorOption displayName="lt_amber" id="2" colors="#ffcc00"/>
       <ColorOption displayName="neon_green" id="3" colors="#33ff00"/>
       <ColorOption displayName="neon_green_2" id="4" colors="#80ffc0"/>
-      <ColorOption displayName="red" id="5" colors="#ff0000"/>
-      <ColorOption displayName="soft_teal" id="6" colors="#15DFD6"/>
-      <ColorOption displayName="soft_pink" id="7" colors="#D8BAE1"/>
+      <ColorOption displayName="soft_teal" id="5" colors="#15DFD6"/>
+      <ColorOption displayName="soft_pink" id="6" colors="#D8BAE1"/>
+      <ColorOption displayName="red" id="7" colors="#ff0000"/>
       <ColorOption displayName="white" id="8" colors="#ffffff"/>
     </ColorConfiguration>
     <ColorConfiguration id="complicationColor" defaultValue="0" displayName="complication_color_label" screenReaderText="complication_color_label">
@@ -18,9 +18,9 @@
       <ColorOption displayName="lt_amber" id="2" colors="#ffcc00"/>
       <ColorOption displayName="neon_green" id="3" colors="#33ff00"/>
       <ColorOption displayName="neon_green_2" id="4" colors="#80ffc0"/>
-      <ColorOption displayName="red" id="5" colors="#ff0000"/>
-      <ColorOption displayName="soft_teal" id="6" colors="#15DFD6"/>
-      <ColorOption displayName="soft_pink" id="7" colors="#D8BAE1"/>
+      <ColorOption displayName="soft_teal" id="5" colors="#15DFD6"/>
+      <ColorOption displayName="soft_pink" id="6" colors="#D8BAE1"/>
+      <ColorOption displayName="red" id="7" colors="#ff0000"/>
       <ColorOption displayName="white" id="8" colors="#ffffff"/>
     </ColorConfiguration>
   </UserConfigurations>
