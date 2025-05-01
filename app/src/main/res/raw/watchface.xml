@@ -1,7 +1,7 @@
+<?xml version="1.0"?>
 <WatchFace width="450" height="450">
-  <Metadata key="CLOCK_TYPE" value="DIGITAL" />
-  <Metadata key="PREVIEW_TIME" value="10:08:32" />
-
+  <Metadata key="CLOCK_TYPE" value="DIGITAL"/>
+  <Metadata key="PREVIEW_TIME" value="10:08:32"/>
   <UserConfigurations>
     <ColorConfiguration id="clockColor" defaultValue="0" displayName="clock_color_label" screenReaderText="clock_color_label">
       <ColorOption displayName="amber" id="1" colors="#ffb000"/>
@@ -24,75 +24,81 @@
       <ColorOption displayName="white" id="8" colors="#ffffff"/>
     </ColorConfiguration>
   </UserConfigurations>
-
   <Scene backgroundColor="#ff000000">
     <DigitalClock x="0" y="0" width="450" height="450">
       <TimeText format="h:mm" hourFormat="SYNC_TO_DEVICE" align="CENTER" x="0" y="0" width="450" height="450" alpha="255">
-        <Variant mode="AMBIENT" target="alpha" value="0" />
+        <Variant mode="AMBIENT" target="alpha" value="0"/>
         <Font family="@font/d7" size="130" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.clockColor]"/>
       </TimeText>
       <TimeText format="h:mm" hourFormat="SYNC_TO_DEVICE" align="CENTER" x="0" y="0" width="450" height="450" alpha="0">
-        <Variant mode="AMBIENT" target="alpha" value="255" />
+        <Variant mode="AMBIENT" target="alpha" value="255"/>
         <Font family="@font/d7" size="215" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.clockColor]"/>
       </TimeText>
     </DigitalClock>
+    <!-- A blurred LCD version
+    <PartText x="0" y="0" width="450" height="450" alpha="255">
+      <Variant mode="AMBIENT" target="alpha" value="0" />
+      <Text align="CENTER" ellipsis="TRUE">
+        <Font family="@font/d7" size="130" color="[CONFIGURATION.clockColor]">
+            <Template>%s:%s
+              <Parameter expression="[HOUR_1_12]" />
+              <Parameter expression="[MINUTE_Z]" />
+            </Template>
+        </Font>
+      </Text>
+    </PartText>
 
-    <ComplicationSlot
-        x="56" y="40"
-        width="112" height="112"
-        slotId="1"
-        name="top_left_complication" displayName="top_left"
-        supportedTypes="SHORT_TEXT">
-      <DefaultProviderPolicy
-          primaryProvider="com.google.android.gm/com.google.android.apps.gmail.wear.complications.UnreadEmailsComplicationService"
-          primaryProviderType="SHORT_TEXT"
-          defaultSystemProvider="SUNRISE_SUNSET"
-          defaultSystemProviderType="SHORT_TEXT"
-          />
-      <BoundingRoundBox x="0" y="0" width="112" height="112" outlinePadding="2" />
-
+    <PartText x="0" y="0" width="450" height="450" alpha="0">
+      <Variant mode="AMBIENT" target="alpha" value="255" />
+      <Text align="CENTER" ellipsis="TRUE">
+        <Font family="@font/d7" size="215" color="[CONFIGURATION.clockColor]">
+          <OutGlow radius="10" color="[CONFIGURATION.clockColor]">
+            <Template>%s:%s
+              <Parameter expression="[HOUR_1_12]" />
+              <Parameter expression="[MINUTE_Z]" />
+            </Template>
+          </OutGlow>
+        </Font>
+      </Text>
+    </PartText>
+-->
+    <ComplicationSlot x="56" y="40" width="112" height="112" slotId="1" name="top_left_complication" displayName="top_left" supportedTypes="SHORT_TEXT">
+      <DefaultProviderPolicy primaryProvider="com.google.android.gm/com.google.android.apps.gmail.wear.complications.UnreadEmailsComplicationService" primaryProviderType="SHORT_TEXT" defaultSystemProvider="SUNRISE_SUNSET" defaultSystemProviderType="SHORT_TEXT"/>
+      <BoundingRoundBox x="0" y="0" width="112" height="112" outlinePadding="2"/>
       <Complication type="SHORT_TEXT">
         <Condition>
           <Expressions>
-            <Expression name="shortText_monochromaticImage">
-              <![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]>
-            </Expression>
-            <Expression name="shortText_title">
-              <![CDATA[[COMPLICATION.TITLE] != null]]>
-            </Expression>
+            <Expression name="shortText_monochromaticImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]></Expression>
+            <Expression name="shortText_title"><![CDATA[[COMPLICATION.TITLE] != null]]></Expression>
           </Expressions>
           <Compare expression="shortText_monochromaticImage">
             <Condition>
               <Expressions>
-                <Expression name="monochromatic_ambientImage">
-                  <![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] != null]]>
-                </Expression>
-                <Expression name="monochromatic_noAmbientImage">
-                  <![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] == null]]>
-                </Expression>
+                <Expression name="monochromatic_ambientImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] != null]]></Expression>
+                <Expression name="monochromatic_noAmbientImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] == null]]></Expression>
               </Expressions>
               <Compare expression="monochromatic_ambientImage">
                 <PartImage x="40" y="15" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                  <Variant mode="AMBIENT" target="alpha" value="0" />
-                  <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
+                  <Variant mode="AMBIENT" target="alpha" value="0"/>
+                  <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
                 </PartImage>
                 <PartText x="0" y="56" width="112" height="20" alpha="255">
-                  <Variant mode="AMBIENT" target="alpha" value="0" />
+                  <Variant mode="AMBIENT" target="alpha" value="0"/>
                   <Text align="CENTER" ellipsis="TRUE">
                     <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.complicationColor]">
                       <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                      </Template>
+                        </Template>
                     </Font>
                   </Text>
                 </PartText>
               </Compare>
               <Compare expression="monochromatic_noAmbientImage">
                 <PartImage x="40" y="15" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                  <Variant mode="AMBIENT" target="alpha" value="0" />
-                  <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
+                  <Variant mode="AMBIENT" target="alpha" value="0"/>
+                  <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
                 </PartImage>
                 <PartText x="0" y="56" width="112" height="20" alpha="255">
-                  <Variant mode="AMBIENT" target="alpha" value="0" />
+                  <Variant mode="AMBIENT" target="alpha" value="0"/>
                   <Text align="CENTER" ellipsis="TRUE">
                     <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.complicationColor]">
                       <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
@@ -105,7 +111,7 @@
           </Compare>
           <Compare expression="shortText_title">
             <Group name="shortText_title" x="0" y="0" width="200" height="200" alpha="255">
-              <Variant mode="AMBIENT" target="alpha" value="0" />
+              <Variant mode="AMBIENT" target="alpha" value="0"/>
               <PartText x="0" y="33" width="112" height="20">
                 <Text align="CENTER" ellipsis="TRUE">
                   <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.complicationColor]">
@@ -127,7 +133,7 @@
           <!-- Text, on its own, with no Icon or Title -->
           <Default>
             <PartText x="0" y="0" width="112" height="112" alpha="255">
-              <Variant mode="AMBIENT" target="alpha" value="0" />
+              <Variant mode="AMBIENT" target="alpha" value="0"/>
               <Text align="CENTER" ellipsis="TRUE">
                 <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.complicationColor]">
                   <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
@@ -139,49 +145,29 @@
         </Condition>
       </Complication>
     </ComplicationSlot>
-
     <!-- complication 2 !-->
-    <ComplicationSlot
-        x="168" y="40"
-        width="112" height="112"
-        slotId="2"
-        name="top_complication" displayName="top"
-        supportedTypes="SHORT_TEXT">
-      <DefaultProviderPolicy
-          primaryProvider="com.google.android.gm/com.google.android.apps.gmail.wear.complications.UnreadEmailsComplicationService"
-          primaryProviderType="SHORT_TEXT"
-          defaultSystemProvider="SUNRISE_SUNSET"
-          defaultSystemProviderType="SHORT_TEXT"
-          />
-      <BoundingRoundBox x="0" y="0" width="112" height="112" outlinePadding="2" />
-
+    <ComplicationSlot x="168" y="40" width="112" height="112" slotId="2" name="top_complication" displayName="top" supportedTypes="SHORT_TEXT">
+      <DefaultProviderPolicy primaryProvider="com.google.android.gm/com.google.android.apps.gmail.wear.complications.UnreadEmailsComplicationService" primaryProviderType="SHORT_TEXT" defaultSystemProvider="SUNRISE_SUNSET" defaultSystemProviderType="SHORT_TEXT"/>
+      <BoundingRoundBox x="0" y="0" width="112" height="112" outlinePadding="2"/>
       <Complication type="SHORT_TEXT">
         <Condition>
           <Expressions>
-            <Expression name="shortText_monochromaticImage">
-              <![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]>
-            </Expression>
-            <Expression name="shortText_title">
-              <![CDATA[[COMPLICATION.TITLE] != null]]>
-            </Expression>
+            <Expression name="shortText_monochromaticImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]></Expression>
+            <Expression name="shortText_title"><![CDATA[[COMPLICATION.TITLE] != null]]></Expression>
           </Expressions>
           <Compare expression="shortText_monochromaticImage">
             <Condition>
               <Expressions>
-                <Expression name="monochromatic_ambientImage">
-                  <![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] != null]]>
-                </Expression>
-                <Expression name="monochromatic_noAmbientImage">
-                  <![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] == null]]>
-                </Expression>
+                <Expression name="monochromatic_ambientImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] != null]]></Expression>
+                <Expression name="monochromatic_noAmbientImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] == null]]></Expression>
               </Expressions>
               <Compare expression="monochromatic_ambientImage">
                 <PartImage x="40" y="15" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                  <Variant mode="AMBIENT" target="alpha" value="0" />
-                  <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
+                  <Variant mode="AMBIENT" target="alpha" value="0"/>
+                  <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
                 </PartImage>
                 <PartText x="0" y="56" width="112" height="20" alpha="255">
-                  <Variant mode="AMBIENT" target="alpha" value="0" />
+                  <Variant mode="AMBIENT" target="alpha" value="0"/>
                   <Text align="CENTER" ellipsis="TRUE">
                     <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.complicationColor]">
                       <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
@@ -192,11 +178,11 @@
               </Compare>
               <Compare expression="monochromatic_noAmbientImage">
                 <PartImage x="40" y="15" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                  <Variant mode="AMBIENT" target="alpha" value="0" />
-                  <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
+                  <Variant mode="AMBIENT" target="alpha" value="0"/>
+                  <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
                 </PartImage>
                 <PartText x="0" y="56" width="112" height="20" alpha="255">
-                  <Variant mode="AMBIENT" target="alpha" value="0" />
+                  <Variant mode="AMBIENT" target="alpha" value="0"/>
                   <Text align="CENTER" ellipsis="TRUE">
                     <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.complicationColor]">
                       <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
@@ -209,7 +195,7 @@
           </Compare>
           <Compare expression="shortText_title">
             <Group name="shortText_title" x="0" y="0" width="200" height="200" alpha="255">
-              <Variant mode="AMBIENT" target="alpha" value="0" />
+              <Variant mode="AMBIENT" target="alpha" value="0"/>
               <PartText x="0" y="33" width="112" height="20">
                 <Text align="CENTER" ellipsis="TRUE">
                   <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.complicationColor]">
@@ -231,7 +217,7 @@
           <!-- Text, on its own, with no Icon or Title -->
           <Default>
             <PartText x="0" y="0" width="112" height="112" alpha="255">
-              <Variant mode="AMBIENT" target="alpha" value="0" />
+              <Variant mode="AMBIENT" target="alpha" value="0"/>
               <Text align="CENTER" ellipsis="TRUE">
                 <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.complicationColor]">
                   <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
@@ -243,49 +229,29 @@
         </Condition>
       </Complication>
     </ComplicationSlot>
-
     <!-- complication 3 !-->
-    <ComplicationSlot
-        x="282" y="40"
-        width="112" height="112"
-        slotId="3"
-        name="top_right_complication" displayName="top_right"
-        supportedTypes="SHORT_TEXT">
-      <DefaultProviderPolicy
-          primaryProvider="com.google.android.gm/com.google.android.apps.gmail.wear.complications.UnreadEmailsComplicationService"
-          primaryProviderType="SHORT_TEXT"
-          defaultSystemProvider="SUNRISE_SUNSET"
-          defaultSystemProviderType="SHORT_TEXT"
-          />
-      <BoundingRoundBox x="0" y="0" width="112" height="112" outlinePadding="2" />
-
+    <ComplicationSlot x="282" y="40" width="112" height="112" slotId="3" name="top_right_complication" displayName="top_right" supportedTypes="SHORT_TEXT">
+      <DefaultProviderPolicy primaryProvider="com.google.android.gm/com.google.android.apps.gmail.wear.complications.UnreadEmailsComplicationService" primaryProviderType="SHORT_TEXT" defaultSystemProvider="SUNRISE_SUNSET" defaultSystemProviderType="SHORT_TEXT"/>
+      <BoundingRoundBox x="0" y="0" width="112" height="112" outlinePadding="2"/>
       <Complication type="SHORT_TEXT">
         <Condition>
           <Expressions>
-            <Expression name="shortText_monochromaticImage">
-              <![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]>
-            </Expression>
-            <Expression name="shortText_title">
-              <![CDATA[[COMPLICATION.TITLE] != null]]>
-            </Expression>
+            <Expression name="shortText_monochromaticImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]></Expression>
+            <Expression name="shortText_title"><![CDATA[[COMPLICATION.TITLE] != null]]></Expression>
           </Expressions>
           <Compare expression="shortText_monochromaticImage">
             <Condition>
               <Expressions>
-                <Expression name="monochromatic_ambientImage">
-                  <![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] != null]]>
-                </Expression>
-                <Expression name="monochromatic_noAmbientImage">
-                  <![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] == null]]>
-                </Expression>
+                <Expression name="monochromatic_ambientImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] != null]]></Expression>
+                <Expression name="monochromatic_noAmbientImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] == null]]></Expression>
               </Expressions>
               <Compare expression="monochromatic_ambientImage">
                 <PartImage x="40" y="15" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                  <Variant mode="AMBIENT" target="alpha" value="0" />
-                  <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
+                  <Variant mode="AMBIENT" target="alpha" value="0"/>
+                  <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
                 </PartImage>
                 <PartText x="0" y="56" width="112" height="20" alpha="255">
-                  <Variant mode="AMBIENT" target="alpha" value="0" />
+                  <Variant mode="AMBIENT" target="alpha" value="0"/>
                   <Text align="CENTER" ellipsis="TRUE">
                     <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.complicationColor]">
                       <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
@@ -296,11 +262,11 @@
               </Compare>
               <Compare expression="monochromatic_noAmbientImage">
                 <PartImage x="40" y="15" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                  <Variant mode="AMBIENT" target="alpha" value="0" />
-                  <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
+                  <Variant mode="AMBIENT" target="alpha" value="0"/>
+                  <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
                 </PartImage>
                 <PartText x="0" y="56" width="112" height="20" alpha="255">
-                  <Variant mode="AMBIENT" target="alpha" value="0" />
+                  <Variant mode="AMBIENT" target="alpha" value="0"/>
                   <Text align="CENTER" ellipsis="TRUE">
                     <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.complicationColor]">
                       <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
@@ -313,7 +279,7 @@
           </Compare>
           <Compare expression="shortText_title">
             <Group name="shortText_title" x="0" y="0" width="200" height="200" alpha="255">
-              <Variant mode="AMBIENT" target="alpha" value="0" />
+              <Variant mode="AMBIENT" target="alpha" value="0"/>
               <PartText x="0" y="33" width="112" height="20">
                 <Text align="CENTER" ellipsis="TRUE">
                   <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.complicationColor]">
@@ -335,7 +301,7 @@
           <!-- Text, on its own, with no Icon or Title -->
           <Default>
             <PartText x="0" y="0" width="112" height="112" alpha="255">
-              <Variant mode="AMBIENT" target="alpha" value="0" />
+              <Variant mode="AMBIENT" target="alpha" value="0"/>
               <Text align="CENTER" ellipsis="TRUE">
                 <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.complicationColor]">
                   <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
@@ -347,48 +313,28 @@
         </Condition>
       </Complication>
     </ComplicationSlot>
-
-    <ComplicationSlot
-        x="56" y="298"
-        width="112" height="112"
-        slotId="4"
-        name="bottom_left_complication" displayName="bottom_left"
-        supportedTypes="SHORT_TEXT">
-      <DefaultProviderPolicy
-          primaryProvider="com.google.android.gm/com.google.android.apps.gmail.wear.complications.UnreadEmailsComplicationService"
-          primaryProviderType="SHORT_TEXT"
-          defaultSystemProvider="SUNRISE_SUNSET"
-          defaultSystemProviderType="SHORT_TEXT"
-          />
-      <BoundingRoundBox x="0" y="0" width="112" height="112" outlinePadding="2" />
-
+    <ComplicationSlot x="56" y="298" width="112" height="112" slotId="4" name="bottom_left_complication" displayName="bottom_left" supportedTypes="SHORT_TEXT">
+      <DefaultProviderPolicy primaryProvider="com.google.android.gm/com.google.android.apps.gmail.wear.complications.UnreadEmailsComplicationService" primaryProviderType="SHORT_TEXT" defaultSystemProvider="SUNRISE_SUNSET" defaultSystemProviderType="SHORT_TEXT"/>
+      <BoundingRoundBox x="0" y="0" width="112" height="112" outlinePadding="2"/>
       <Complication type="SHORT_TEXT">
         <Condition>
           <Expressions>
-            <Expression name="shortText_monochromaticImage">
-              <![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]>
-            </Expression>
-            <Expression name="shortText_title">
-              <![CDATA[[COMPLICATION.TITLE] != null]]>
-            </Expression>
+            <Expression name="shortText_monochromaticImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]></Expression>
+            <Expression name="shortText_title"><![CDATA[[COMPLICATION.TITLE] != null]]></Expression>
           </Expressions>
           <Compare expression="shortText_monochromaticImage">
             <Condition>
               <Expressions>
-                <Expression name="monochromatic_ambientImage">
-                  <![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] != null]]>
-                </Expression>
-                <Expression name="monochromatic_noAmbientImage">
-                  <![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] == null]]>
-                </Expression>
+                <Expression name="monochromatic_ambientImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] != null]]></Expression>
+                <Expression name="monochromatic_noAmbientImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] == null]]></Expression>
               </Expressions>
               <Compare expression="monochromatic_ambientImage">
                 <PartImage x="40" y="56" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                  <Variant mode="AMBIENT" target="alpha" value="0" />
-                  <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
+                  <Variant mode="AMBIENT" target="alpha" value="0"/>
+                  <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
                 </PartImage>
                 <PartText x="0" y="15" width="112" height="20" alpha="255">
-                  <Variant mode="AMBIENT" target="alpha" value="0" />
+                  <Variant mode="AMBIENT" target="alpha" value="0"/>
                   <Text align="CENTER" ellipsis="TRUE">
                     <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.complicationColor]">
                       <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
@@ -399,11 +345,11 @@
               </Compare>
               <Compare expression="monochromatic_noAmbientImage">
                 <PartImage x="40" y="56" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                  <Variant mode="AMBIENT" target="alpha" value="0" />
-                  <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
+                  <Variant mode="AMBIENT" target="alpha" value="0"/>
+                  <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
                 </PartImage>
                 <PartText x="0" y="15" width="112" height="20" alpha="255">
-                  <Variant mode="AMBIENT" target="alpha" value="0" />
+                  <Variant mode="AMBIENT" target="alpha" value="0"/>
                   <Text align="CENTER" ellipsis="TRUE">
                     <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.complicationColor]">
                       <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
@@ -416,7 +362,7 @@
           </Compare>
           <Compare expression="shortText_title">
             <Group name="shortText_title" x="0" y="0" width="200" height="200" alpha="255">
-              <Variant mode="AMBIENT" target="alpha" value="0" />
+              <Variant mode="AMBIENT" target="alpha" value="0"/>
               <PartText x="0" y="33" width="112" height="20">
                 <Text align="CENTER" ellipsis="TRUE">
                   <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.complicationColor]">
@@ -438,7 +384,7 @@
           <!-- Text, on its own, with no Icon or Title -->
           <Default>
             <PartText x="0" y="0" width="112" height="112" alpha="255">
-              <Variant mode="AMBIENT" target="alpha" value="0" />
+              <Variant mode="AMBIENT" target="alpha" value="0"/>
               <Text align="CENTER" ellipsis="TRUE">
                 <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.complicationColor]">
                   <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
@@ -450,47 +396,28 @@
         </Condition>
       </Complication>
     </ComplicationSlot>
-    <ComplicationSlot
-        x="168" y="298"
-        width="112" height="112"
-        slotId="5"
-        name="bottom_complication" displayName="bottom"
-        supportedTypes="SHORT_TEXT">
-      <DefaultProviderPolicy
-          primaryProvider="com.google.android.gm/com.google.android.apps.gmail.wear.complications.UnreadEmailsComplicationService"
-          primaryProviderType="SHORT_TEXT"
-          defaultSystemProvider="SUNRISE_SUNSET"
-          defaultSystemProviderType="SHORT_TEXT"
-          />
-      <BoundingRoundBox x="0" y="0" width="112" height="112" outlinePadding="2" />
-
+    <ComplicationSlot x="168" y="298" width="112" height="112" slotId="5" name="bottom_complication" displayName="bottom" supportedTypes="SHORT_TEXT">
+      <DefaultProviderPolicy primaryProvider="com.google.android.gm/com.google.android.apps.gmail.wear.complications.UnreadEmailsComplicationService" primaryProviderType="SHORT_TEXT" defaultSystemProvider="SUNRISE_SUNSET" defaultSystemProviderType="SHORT_TEXT"/>
+      <BoundingRoundBox x="0" y="0" width="112" height="112" outlinePadding="2"/>
       <Complication type="SHORT_TEXT">
         <Condition>
           <Expressions>
-            <Expression name="shortText_monochromaticImage">
-              <![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]>
-            </Expression>
-            <Expression name="shortText_title">
-              <![CDATA[[COMPLICATION.TITLE] != null]]>
-            </Expression>
+            <Expression name="shortText_monochromaticImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]></Expression>
+            <Expression name="shortText_title"><![CDATA[[COMPLICATION.TITLE] != null]]></Expression>
           </Expressions>
           <Compare expression="shortText_monochromaticImage">
             <Condition>
               <Expressions>
-                <Expression name="monochromatic_ambientImage">
-                  <![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] != null]]>
-                </Expression>
-                <Expression name="monochromatic_noAmbientImage">
-                  <![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] == null]]>
-                </Expression>
+                <Expression name="monochromatic_ambientImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] != null]]></Expression>
+                <Expression name="monochromatic_noAmbientImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] == null]]></Expression>
               </Expressions>
               <Compare expression="monochromatic_ambientImage">
                 <PartImage x="40" y="56" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                  <Variant mode="AMBIENT" target="alpha" value="0" />
-                  <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
+                  <Variant mode="AMBIENT" target="alpha" value="0"/>
+                  <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
                 </PartImage>
                 <PartText x="0" y="15" width="112" height="20" alpha="255">
-                  <Variant mode="AMBIENT" target="alpha" value="0" />
+                  <Variant mode="AMBIENT" target="alpha" value="0"/>
                   <Text align="CENTER" ellipsis="TRUE">
                     <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.complicationColor]">
                       <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
@@ -501,11 +428,11 @@
               </Compare>
               <Compare expression="monochromatic_noAmbientImage">
                 <PartImage x="40" y="56" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                  <Variant mode="AMBIENT" target="alpha" value="0" />
-                  <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
+                  <Variant mode="AMBIENT" target="alpha" value="0"/>
+                  <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
                 </PartImage>
                 <PartText x="0" y="15" width="112" height="20" alpha="255">
-                  <Variant mode="AMBIENT" target="alpha" value="0" />
+                  <Variant mode="AMBIENT" target="alpha" value="0"/>
                   <Text align="CENTER" ellipsis="TRUE">
                     <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.complicationColor]">
                       <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
@@ -518,7 +445,7 @@
           </Compare>
           <Compare expression="shortText_title">
             <Group name="shortText_title" x="0" y="0" width="200" height="200" alpha="255">
-              <Variant mode="AMBIENT" target="alpha" value="0" />
+              <Variant mode="AMBIENT" target="alpha" value="0"/>
               <PartText x="0" y="33" width="112" height="20">
                 <Text align="CENTER" ellipsis="TRUE">
                   <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.complicationColor]">
@@ -540,7 +467,7 @@
           <!-- Text, on its own, with no Icon or Title -->
           <Default>
             <PartText x="0" y="0" width="112" height="112" alpha="255">
-              <Variant mode="AMBIENT" target="alpha" value="0" />
+              <Variant mode="AMBIENT" target="alpha" value="0"/>
               <Text align="CENTER" ellipsis="TRUE">
                 <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.complicationColor]">
                   <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
@@ -552,47 +479,28 @@
         </Condition>
       </Complication>
     </ComplicationSlot>
-    <ComplicationSlot
-        x="282" y="298"
-        width="112" height="112"
-        slotId="6"
-        name="bottom_right_complication" displayName="bottom_right"
-        supportedTypes="SHORT_TEXT">
-      <DefaultProviderPolicy
-          primaryProvider="com.google.android.gm/com.google.android.apps.gmail.wear.complications.UnreadEmailsComplicationService"
-          primaryProviderType="SHORT_TEXT"
-          defaultSystemProvider="SUNRISE_SUNSET"
-          defaultSystemProviderType="SHORT_TEXT"
-          />
-      <BoundingRoundBox x="0" y="0" width="112" height="112" outlinePadding="2" />
-
+    <ComplicationSlot x="282" y="298" width="112" height="112" slotId="6" name="bottom_right_complication" displayName="bottom_right" supportedTypes="SHORT_TEXT">
+      <DefaultProviderPolicy primaryProvider="com.google.android.gm/com.google.android.apps.gmail.wear.complications.UnreadEmailsComplicationService" primaryProviderType="SHORT_TEXT" defaultSystemProvider="SUNRISE_SUNSET" defaultSystemProviderType="SHORT_TEXT"/>
+      <BoundingRoundBox x="0" y="0" width="112" height="112" outlinePadding="2"/>
       <Complication type="SHORT_TEXT">
         <Condition>
           <Expressions>
-            <Expression name="shortText_monochromaticImage">
-              <![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]>
-            </Expression>
-            <Expression name="shortText_title">
-              <![CDATA[[COMPLICATION.TITLE] != null]]>
-            </Expression>
+            <Expression name="shortText_monochromaticImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]></Expression>
+            <Expression name="shortText_title"><![CDATA[[COMPLICATION.TITLE] != null]]></Expression>
           </Expressions>
           <Compare expression="shortText_monochromaticImage">
             <Condition>
               <Expressions>
-                <Expression name="monochromatic_ambientImage">
-                  <![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] != null]]>
-                </Expression>
-                <Expression name="monochromatic_noAmbientImage">
-                  <![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] == null]]>
-                </Expression>
+                <Expression name="monochromatic_ambientImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] != null]]></Expression>
+                <Expression name="monochromatic_noAmbientImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] == null]]></Expression>
               </Expressions>
               <Compare expression="monochromatic_ambientImage">
                 <PartImage x="40" y="56" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                  <Variant mode="AMBIENT" target="alpha" value="0" />
-                  <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
+                  <Variant mode="AMBIENT" target="alpha" value="0"/>
+                  <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
                 </PartImage>
                 <PartText x="0" y="15" width="112" height="20" alpha="255">
-                  <Variant mode="AMBIENT" target="alpha" value="0" />
+                  <Variant mode="AMBIENT" target="alpha" value="0"/>
                   <Text align="CENTER" ellipsis="TRUE">
                     <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.complicationColor]">
                       <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
@@ -603,11 +511,11 @@
               </Compare>
               <Compare expression="monochromatic_noAmbientImage">
                 <PartImage x="40" y="56" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                  <Variant mode="AMBIENT" target="alpha" value="0" />
-                  <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
+                  <Variant mode="AMBIENT" target="alpha" value="0"/>
+                  <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
                 </PartImage>
                 <PartText x="0" y="15" width="112" height="20" alpha="255">
-                  <Variant mode="AMBIENT" target="alpha" value="0" />
+                  <Variant mode="AMBIENT" target="alpha" value="0"/>
                   <Text align="CENTER" ellipsis="TRUE">
                     <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.complicationColor]">
                       <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
@@ -620,7 +528,7 @@
           </Compare>
           <Compare expression="shortText_title">
             <Group name="shortText_title" x="0" y="0" width="200" height="200" alpha="255">
-              <Variant mode="AMBIENT" target="alpha" value="0" />
+              <Variant mode="AMBIENT" target="alpha" value="0"/>
               <PartText x="0" y="33" width="112" height="20">
                 <Text align="CENTER" ellipsis="TRUE">
                   <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.complicationColor]">
@@ -642,7 +550,7 @@
           <!-- Text, on its own, with no Icon or Title -->
           <Default>
             <PartText x="0" y="0" width="112" height="112" alpha="255">
-              <Variant mode="AMBIENT" target="alpha" value="0" />
+              <Variant mode="AMBIENT" target="alpha" value="0"/>
               <Text align="CENTER" ellipsis="TRUE">
                 <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.complicationColor]">
                   <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
@@ -660,81 +568,52 @@
       Demonstrates tinting and use of MONOCHROMATIC_IMAGE_AMBIENT where
       provided.
     -->
-    <ComplicationSlot
-        x="338" y="169"
-        width="112" height="112"
-        slotId="7"
-        name="right_complication" displayName="right"
-        supportedTypes="MONOCHROMATIC_IMAGE">
-      <DefaultProviderPolicy
-          primaryProvider="com.fitbit.FitbitMobile/com.fitbit.complications.today.TodayComplicationDataSourceService"
-          primaryProviderType="MONOCHROMATIC_IMAGE"
-          defaultSystemProvider="WATCH_BATTERY"
-          defaultSystemProviderType="MONOCHROMATIC_IMAGE"
-          />
-      <BoundingOval x="0" y="0" width="112" height="112" outlinePadding="2" />
+    <ComplicationSlot x="338" y="169" width="112" height="112" slotId="7" name="right_complication" displayName="right" supportedTypes="MONOCHROMATIC_IMAGE">
+      <DefaultProviderPolicy primaryProvider="com.fitbit.FitbitMobile/com.fitbit.complications.today.TodayComplicationDataSourceService" primaryProviderType="MONOCHROMATIC_IMAGE" defaultSystemProvider="WATCH_BATTERY" defaultSystemProviderType="MONOCHROMATIC_IMAGE"/>
+      <BoundingOval x="0" y="0" width="112" height="112" outlinePadding="2"/>
       <Complication type="MONOCHROMATIC_IMAGE">
         <Condition>
           <Expressions>
-            <Expression name="monochromatic_ambientImage">
-              <![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] != null]]>
-            </Expression>
-            <Expression name="monochromatic_noAmbientImage">
-              <![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] == null]]>
-            </Expression>
+            <Expression name="monochromatic_ambientImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] != null]]></Expression>
+            <Expression name="monochromatic_noAmbientImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] == null]]></Expression>
           </Expressions>
           <Compare expression="monochromatic_ambientImage">
             <PartImage x="24" y="24" width="64" height="64" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-              <Variant mode="AMBIENT" target="alpha" value="0" />
-              <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
+              <Variant mode="AMBIENT" target="alpha" value="0"/>
+              <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
             </PartImage>
           </Compare>
           <Compare expression="monochromatic_noAmbientImage">
             <PartImage x="24" y="24" width="64" height="64" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-              <Variant mode="AMBIENT" target="alpha" value="0" />
-              <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
+              <Variant mode="AMBIENT" target="alpha" value="0"/>
+              <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
             </PartImage>
           </Compare>
         </Condition>
       </Complication>
     </ComplicationSlot>
-
     <!--
     Slot 8
     -->
-    <ComplicationSlot
-        x="0" y="169"
-        width="112" height="112"
-        slotId="8"
-        name="left_complication" displayName="left"
-        supportedTypes="MONOCHROMATIC_IMAGE">
-      <DefaultProviderPolicy
-          primaryProvider="com.fitbit.FitbitMobile/com.fitbit.complications.today.TodayComplicationDataSourceService"
-          primaryProviderType="MONOCHROMATIC_IMAGE"
-          defaultSystemProvider="WATCH_BATTERY"
-          defaultSystemProviderType="MONOCHROMATIC_IMAGE"
-          />
-      <BoundingOval x="0" y="0" width="112" height="112" outlinePadding="2" />
+    <ComplicationSlot x="0" y="169" width="112" height="112" slotId="8" name="left_complication" displayName="left" supportedTypes="MONOCHROMATIC_IMAGE">
+      <DefaultProviderPolicy primaryProvider="com.fitbit.FitbitMobile/com.fitbit.complications.today.TodayComplicationDataSourceService" primaryProviderType="MONOCHROMATIC_IMAGE" defaultSystemProvider="WATCH_BATTERY" defaultSystemProviderType="MONOCHROMATIC_IMAGE"/>
+      <BoundingOval x="0" y="0" width="112" height="112" outlinePadding="2"/>
       <Complication type="MONOCHROMATIC_IMAGE">
         <Condition>
           <Expressions>
-            <Expression name="monochromatic_ambientImage">
-              <![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] != null]]>
-            </Expression>
-            <Expression name="monochromatic_noAmbientImage">
-              <![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] == null]]>
-            </Expression>
+            <Expression name="monochromatic_ambientImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] != null]]></Expression>
+            <Expression name="monochromatic_noAmbientImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] == null]]></Expression>
           </Expressions>
           <Compare expression="monochromatic_ambientImage">
             <PartImage x="24" y="24" width="64" height="64" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-              <Variant mode="AMBIENT" target="alpha" value="0" />
-              <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
+              <Variant mode="AMBIENT" target="alpha" value="0"/>
+              <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
             </PartImage>
           </Compare>
           <Compare expression="monochromatic_noAmbientImage">
             <PartImage x="24" y="24" width="64" height="64" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-              <Variant mode="AMBIENT" target="alpha" value="0" />
-              <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]" />
+              <Variant mode="AMBIENT" target="alpha" value="0"/>
+              <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
             </PartImage>
           </Compare>
         </Condition>
