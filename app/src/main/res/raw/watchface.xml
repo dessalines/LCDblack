@@ -23,18 +23,40 @@
       <ColorOption displayName="red" id="7" colors="#ff0000"/>
       <ColorOption displayName="white" id="8" colors="#ffffff"/>
     </ColorConfiguration>
+    <ListConfiguration id="font" displayName="font_label" screenReaderText="font_label" defaultValue="d7">
+      <ListOption id="d7" displayName="lcd_label" screenReaderText="lcd_label"/>
+      <ListOption id="dd" displayName="dot_digital_label" screenReaderText="dot_digital_label"/>
+    </ListConfiguration>
   </UserConfigurations>
   <Scene backgroundColor="#ff000000">
-    <DigitalClock x="0" y="0" width="450" height="450">
-      <TimeText format="h:mm" hourFormat="SYNC_TO_DEVICE" align="CENTER" x="0" y="0" width="450" height="450" alpha="255">
-        <Variant mode="AMBIENT" target="alpha" value="0"/>
-        <Font family="@font/d7" size="130" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.clockColor]"/>
-      </TimeText>
-      <TimeText format="h:mm" hourFormat="SYNC_TO_DEVICE" align="CENTER" x="0" y="0" width="450" height="450" alpha="0">
-        <Variant mode="AMBIENT" target="alpha" value="255"/>
-        <Font family="@font/d7" size="215" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.clockColor]"/>
-      </TimeText>
-    </DigitalClock>
+    <Group name="mainClock" x="0" y="0" width="450" height="450">
+      <ListConfiguration id="font">
+        <ListOption id="d7">
+          <DigitalClock x="0" y="0" width="450" height="450">
+            <TimeText format="h:mm" hourFormat="SYNC_TO_DEVICE" align="CENTER" x="0" y="0" width="450" height="450" alpha="255">
+              <Variant mode="AMBIENT" target="alpha" value="0"/>
+              <Font family="@font/d7" size="130" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.clockColor]"/>
+            </TimeText>
+            <TimeText format="h:mm" hourFormat="SYNC_TO_DEVICE" align="CENTER" x="0" y="0" width="450" height="450" alpha="0">
+              <Variant mode="AMBIENT" target="alpha" value="255"/>
+              <Font family="@font/d7" size="215" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.clockColor]"/>
+            </TimeText>
+          </DigitalClock>
+        </ListOption>
+        <ListOption id="dd">
+          <DigitalClock x="0" y="0" width="450" height="450">
+            <TimeText format="h:mm" hourFormat="SYNC_TO_DEVICE" align="CENTER" x="0" y="0" width="450" height="450" alpha="255">
+              <Variant mode="AMBIENT" target="alpha" value="0"/>
+              <Font family="@font/dd" size="130" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.clockColor]"/>
+            </TimeText>
+            <TimeText format="h:mm" hourFormat="SYNC_TO_DEVICE" align="CENTER" x="0" y="0" width="450" height="450" alpha="0">
+              <Variant mode="AMBIENT" target="alpha" value="255"/>
+              <Font family="@font/dd" size="215" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.clockColor]"/>
+            </TimeText>
+          </DigitalClock>
+        </ListOption>
+      </ListConfiguration>
+    </Group>
     <!-- A blurred LCD version
     <PartText x="0" y="0" width="450" height="450" alpha="255">
       <Variant mode="AMBIENT" target="alpha" value="0" />
