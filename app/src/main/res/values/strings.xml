@@ -2,4 +2,10 @@
     <string name="watch_face_name">LCD-black</string>
     <string name="complication_color_label">Complication color</string>
     <string name="clock_color_label">Clock color</string>
+    <string name="text_color_label">Text color</string>
+    <string name="aod_mode_label">AOD mode</string>
+    <string name="time_only_label">Time only</string>
+    <string name="twenty_five_dimmed_label">25%%</string>
+    <string name="fifty_dimmed_label">50%%</string>
+    <string name="full_label">Full</string>
 </resources>
