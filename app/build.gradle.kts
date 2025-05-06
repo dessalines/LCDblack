@@ -11,8 +11,8 @@ android {
         applicationId = "com.dessalines.lcd_black"
         minSdk = 34
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 2
+        versionName = "2.0"
     }
 
     if (project.hasProperty("RELEASE_STORE_FILE")) {
