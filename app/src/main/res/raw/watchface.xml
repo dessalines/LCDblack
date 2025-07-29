@@ -100,8 +100,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="0"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                            </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -111,8 +110,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="191"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                            </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -122,8 +120,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="127"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                            </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -132,8 +129,7 @@
                       <PartText x="0" y="56" width="112" height="20" alpha="255">
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                            </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -174,8 +170,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="0"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                            </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -185,8 +180,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="191"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                            </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -196,8 +190,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="127"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                            </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -206,8 +199,7 @@
                       <PartText x="0" y="56" width="112" height="20" alpha="255">
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                            </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -225,8 +217,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -236,8 +227,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="191"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -247,8 +237,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="127"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -257,8 +246,7 @@
                   <PartText x="0" y="33" width="112" height="20">
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -270,8 +258,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -281,8 +268,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="191"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -292,8 +278,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="127"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -302,8 +287,7 @@
                   <PartText x="0" y="56" width="112" height="20">
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -320,8 +304,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                  </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -331,8 +314,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="191"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                  </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -342,8 +324,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="127"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                  </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -352,8 +333,7 @@
                   <PartText x="0" y="0" width="112" height="112" alpha="255">
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                  </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -364,7 +344,6 @@
         </Condition>
       </Complication>
     </ComplicationSlot>
-    <!-- complication 2 !-->
     <ComplicationSlot x="168" y="20" width="112" height="112" slotId="2" name="top_complication" displayName="top" supportedTypes="SHORT_TEXT">
       <DefaultProviderPolicy primaryProvider="com.google.android.gm/com.google.android.apps.gmail.wear.complications.UnreadEmailsComplicationService" primaryProviderType="SHORT_TEXT" defaultSystemProvider="SUNRISE_SUNSET" defaultSystemProviderType="SHORT_TEXT"/>
       <BoundingRoundBox x="0" y="0" width="112" height="112" outlinePadding="2"/>
@@ -413,8 +392,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="0"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                            </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -424,8 +402,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="191"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                            </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -435,8 +412,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="127"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                            </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -445,8 +421,7 @@
                       <PartText x="0" y="56" width="112" height="20" alpha="255">
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                            </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -487,8 +462,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="0"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                            </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -498,8 +472,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="191"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                            </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -509,8 +482,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="127"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                            </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -519,8 +491,7 @@
                       <PartText x="0" y="56" width="112" height="20" alpha="255">
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                            </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -538,8 +509,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -549,8 +519,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="191"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -560,8 +529,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="127"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -570,8 +538,7 @@
                   <PartText x="0" y="33" width="112" height="20">
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -583,8 +550,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -594,8 +560,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="191"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -605,8 +570,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="127"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -615,8 +579,7 @@
                   <PartText x="0" y="56" width="112" height="20">
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -633,8 +596,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                  </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -644,8 +606,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="191"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                  </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -655,8 +616,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="127"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                  </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -665,8 +625,7 @@
                   <PartText x="0" y="0" width="112" height="112" alpha="255">
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                  </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -677,7 +636,6 @@
         </Condition>
       </Complication>
     </ComplicationSlot>
-    <!-- complication 3 !-->
     <ComplicationSlot x="282" y="20" width="112" height="112" slotId="3" name="top_right_complication" displayName="top_right" supportedTypes="SHORT_TEXT">
       <DefaultProviderPolicy primaryProvider="com.google.android.gm/com.google.android.apps.gmail.wear.complications.UnreadEmailsComplicationService" primaryProviderType="SHORT_TEXT" defaultSystemProvider="SUNRISE_SUNSET" defaultSystemProviderType="SHORT_TEXT"/>
       <BoundingRoundBox x="0" y="0" width="112" height="112" outlinePadding="2"/>
@@ -726,8 +684,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="0"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                            </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -737,8 +694,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="191"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                            </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -748,8 +704,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="127"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                            </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -758,8 +713,7 @@
                       <PartText x="0" y="56" width="112" height="20" alpha="255">
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                            </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -800,8 +754,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="0"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                            </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -811,8 +764,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="191"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                            </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -822,8 +774,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="127"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                            </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -832,8 +783,7 @@
                       <PartText x="0" y="56" width="112" height="20" alpha="255">
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                            </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -851,8 +801,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -862,8 +811,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="191"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -873,8 +821,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="127"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -883,8 +830,7 @@
                   <PartText x="0" y="33" width="112" height="20">
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -896,8 +842,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -907,8 +852,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="191"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -918,8 +862,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="127"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -928,8 +871,7 @@
                   <PartText x="0" y="56" width="112" height="20">
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -946,8 +888,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                  </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -957,8 +898,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="191"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                  </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -968,8 +908,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="127"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                  </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -978,8 +917,7 @@
                   <PartText x="0" y="0" width="112" height="112" alpha="255">
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                  </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -990,7 +928,6 @@
         </Condition>
       </Complication>
     </ComplicationSlot>
-    <!-- complication 4 !-->
     <ComplicationSlot x="56" y="325" width="112" height="112" slotId="4" name="bottom_left_complication" displayName="bottom_left" supportedTypes="SHORT_TEXT">
       <DefaultProviderPolicy primaryProvider="com.google.android.gm/com.google.android.apps.gmail.wear.complications.UnreadEmailsComplicationService" primaryProviderType="SHORT_TEXT" defaultSystemProvider="SUNRISE_SUNSET" defaultSystemProviderType="SHORT_TEXT"/>
       <BoundingRoundBox x="0" y="0" width="112" height="112" outlinePadding="2"/>
@@ -1014,8 +951,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="0"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                      </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -1025,8 +961,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="191"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                      </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -1036,8 +971,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="127"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                      </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -1046,8 +980,7 @@
                       <PartText x="0" y="20" width="112" height="20" alpha="255">
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                      </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -1088,8 +1021,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="0"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                      </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -1099,8 +1031,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="191"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                      </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -1110,8 +1041,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="127"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                      </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -1120,8 +1050,7 @@
                       <PartText x="0" y="20" width="112" height="20" alpha="255">
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                      </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -1164,8 +1093,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1175,8 +1103,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="191"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1186,8 +1113,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="127"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1196,8 +1122,7 @@
                   <PartText x="0" y="33" width="112" height="20">
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1209,8 +1134,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1220,8 +1144,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="191"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1231,8 +1154,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="127"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1241,8 +1163,7 @@
                   <PartText x="0" y="56" width="112" height="20">
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1259,8 +1180,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                  </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1270,8 +1190,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="191"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                  </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1281,8 +1200,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="127"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                  </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1291,8 +1209,7 @@
                   <PartText x="0" y="0" width="112" height="112" alpha="255">
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                  </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1303,7 +1220,6 @@
         </Condition>
       </Complication>
     </ComplicationSlot>
-    <!-- Complication 5 -->
     <ComplicationSlot x="168" y="325" width="112" height="112" slotId="5" name="bottom_complication" displayName="bottom" supportedTypes="SHORT_TEXT">
       <DefaultProviderPolicy primaryProvider="com.google.android.gm/com.google.android.apps.gmail.wear.complications.UnreadEmailsComplicationService" primaryProviderType="SHORT_TEXT" defaultSystemProvider="SUNRISE_SUNSET" defaultSystemProviderType="SHORT_TEXT"/>
       <BoundingRoundBox x="0" y="0" width="112" height="112" outlinePadding="2"/>
@@ -1327,8 +1243,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="0"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                      </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -1338,8 +1253,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="191"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                      </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -1349,8 +1263,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="127"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                      </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -1359,8 +1272,7 @@
                       <PartText x="0" y="20" width="112" height="20" alpha="255">
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                      </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -1401,8 +1313,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="0"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                      </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -1412,8 +1323,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="191"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                      </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -1423,8 +1333,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="127"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                      </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -1433,8 +1342,7 @@
                       <PartText x="0" y="20" width="112" height="20" alpha="255">
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                      </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -1477,8 +1385,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1488,8 +1395,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="191"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1499,8 +1405,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="127"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1509,8 +1414,7 @@
                   <PartText x="0" y="33" width="112" height="20">
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1522,8 +1426,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1533,8 +1436,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="191"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1544,8 +1446,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="127"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1554,8 +1455,7 @@
                   <PartText x="0" y="56" width="112" height="20">
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1572,8 +1472,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                  </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1583,8 +1482,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="191"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                  </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1594,8 +1492,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="127"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                  </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1604,8 +1501,7 @@
                   <PartText x="0" y="0" width="112" height="112" alpha="255">
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                  </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1616,7 +1512,6 @@
         </Condition>
       </Complication>
     </ComplicationSlot>
-    <!-- Complication 6 -->
     <ComplicationSlot x="282" y="325" width="112" height="112" slotId="6" name="bottom_right_complication" displayName="bottom_right" supportedTypes="SHORT_TEXT">
       <DefaultProviderPolicy primaryProvider="com.google.android.gm/com.google.android.apps.gmail.wear.complications.UnreadEmailsComplicationService" primaryProviderType="SHORT_TEXT" defaultSystemProvider="SUNRISE_SUNSET" defaultSystemProviderType="SHORT_TEXT"/>
       <BoundingRoundBox x="0" y="0" width="112" height="112" outlinePadding="2"/>
@@ -1640,8 +1535,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="0"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                      </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -1651,8 +1545,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="191"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                      </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -1662,8 +1555,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="127"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                      </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -1672,8 +1564,7 @@
                       <PartText x="0" y="20" width="112" height="20" alpha="255">
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                      </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -1714,8 +1605,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="0"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                      </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -1725,8 +1615,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="191"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                      </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -1736,8 +1625,7 @@
                         <Variant mode="AMBIENT" target="alpha" value="127"/>
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                      </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -1746,8 +1634,7 @@
                       <PartText x="0" y="20" width="112" height="20" alpha="255">
                         <Text align="CENTER" ellipsis="TRUE">
                           <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                      </Template>
+                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                           </Font>
                         </Text>
                       </PartText>
@@ -1790,8 +1677,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1801,8 +1687,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="191"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1812,8 +1697,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="127"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1822,8 +1706,7 @@
                   <PartText x="0" y="33" width="112" height="20">
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1835,8 +1718,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1846,8 +1728,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="191"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1857,8 +1738,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="127"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1867,8 +1747,7 @@
                   <PartText x="0" y="56" width="112" height="20">
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                    </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1885,8 +1764,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="0"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                  </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1896,8 +1774,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="191"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                  </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1907,8 +1784,7 @@
                     <Variant mode="AMBIENT" target="alpha" value="127"/>
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                  </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
@@ -1917,8 +1793,7 @@
                   <PartText x="0" y="0" width="112" height="112" alpha="255">
                     <Text align="CENTER" ellipsis="TRUE">
                       <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/>
-                  </Template>
+                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
                       </Font>
                     </Text>
                   </PartText>
