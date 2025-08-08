@@ -1,43 +1,43 @@
 <DefaultProviderPolicy primaryProvider="com.google.android.gm/com.google.android.apps.gmail.wear.complications.UnreadEmailsComplicationService" primaryProviderType="SHORT_TEXT" defaultSystemProvider="SUNRISE_SUNSET" defaultSystemProviderType="SHORT_TEXT"/>
-<BoundingRoundBox x="0" y="0" width="112" height="112" outlinePadding="2"/>
+<BoundingRoundBox x="0" y="0" width="128" height="128" outlinePadding="2"/>
 <Complication type="SHORT_TEXT">
   <!-- Text, on its own, with no Icon or Title -->
-  <Group name="textOnly" x="0" y="0" width="200" height="200" alpha="255">
+  <Group name="textOnly" x="0" y="0" width="128" height="128" alpha="255">
     <ListConfiguration id="aod_mode">
       <ListOption id="time_only">
-        <PartText x="0" y="0" width="112" height="112" alpha="255">
+        <PartText x="0" y="0" width="128" height="128" alpha="255">
           <Variant mode="AMBIENT" target="alpha" value="0"/>
           <Text align="CENTER" ellipsis="TRUE">
-            <Font family="SYNC_TO_DEVICE" size="46" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+            <Font family="SYNC_TO_DEVICE" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
               <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
             </Font>
           </Text>
         </PartText>
       </ListOption>
       <ListOption id="twenty_five_dimmed">
-        <PartText x="0" y="0" width="112" height="112" alpha="255">
+        <PartText x="0" y="0" width="128" height="128" alpha="255">
           <Variant mode="AMBIENT" target="alpha" value="191"/>
           <Text align="CENTER" ellipsis="TRUE">
-            <Font family="SYNC_TO_DEVICE" size="46" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+            <Font family="SYNC_TO_DEVICE" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
               <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
             </Font>
           </Text>
         </PartText>
       </ListOption>
       <ListOption id="fifty_dimmed">
-        <PartText x="0" y="0" width="112" height="112" alpha="255">
+        <PartText x="0" y="0" width="128" height="128" alpha="255">
           <Variant mode="AMBIENT" target="alpha" value="127"/>
           <Text align="CENTER" ellipsis="TRUE">
-            <Font family="SYNC_TO_DEVICE" size="46" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+            <Font family="SYNC_TO_DEVICE" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
               <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
             </Font>
           </Text>
         </PartText>
       </ListOption>
       <ListOption id="full">
-        <PartText x="0" y="0" width="112" height="112" alpha="255">
+        <PartText x="0" y="0" width="128" height="128" alpha="255">
           <Text align="CENTER" ellipsis="TRUE">
-            <Font family="SYNC_TO_DEVICE" size="46" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+            <Font family="SYNC_TO_DEVICE" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
               <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
             </Font>
           </Text>
