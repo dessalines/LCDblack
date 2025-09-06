@@ -15,18 +15,6 @@
       <ColorOption displayName="gray" id="9" colors="#808080"/>
       <ColorOption displayName="black" id="10" colors="#000000"/>
     </ColorConfiguration>
-    <ColorConfiguration id="complicationColor" defaultValue="0" displayName="complication_color_label" screenReaderText="complication_color_label">
-      <ColorOption displayName="amber" id="1" colors="#ffb000"/>
-      <ColorOption displayName="lt_amber" id="2" colors="#ffcc00"/>
-      <ColorOption displayName="neon_green" id="3" colors="#33ff00"/>
-      <ColorOption displayName="neon_green_2" id="4" colors="#80ffc0"/>
-      <ColorOption displayName="soft_teal" id="5" colors="#15DFD6"/>
-      <ColorOption displayName="soft_pink" id="6" colors="#D8BAE1"/>
-      <ColorOption displayName="red" id="7" colors="#ff0000"/>
-      <ColorOption displayName="white" id="8" colors="#ffffff"/>
-      <ColorOption displayName="gray" id="9" colors="#808080"/>
-      <ColorOption displayName="black" id="10" colors="#000000"/>
-    </ColorConfiguration>
     <ColorConfiguration id="textColor" defaultValue="0" displayName="text_color_label" screenReaderText="text_color_label">
       <ColorOption displayName="amber" id="1" colors="#ffb000"/>
       <ColorOption displayName="lt_amber" id="2" colors="#ffcc00"/>
@@ -49,1759 +37,312 @@
   <Scene backgroundColor="#ff000000">
     <DigitalClock x="0" y="0" width="450" height="450">
       <TimeText format="h:mm" hourFormat="SYNC_TO_DEVICE" align="CENTER" x="0" y="0" width="450" height="450" alpha="255">
-        <Font family="@font/d7" size="215" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.clockColor]"/>
+        <Variant mode="AMBIENT" target="alpha" value="0"/>
+        <Font family="SYNC_TO_DEVICE" size="170" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.clockColor]"/>
+      </TimeText>
+      <TimeText format="h:mm" hourFormat="SYNC_TO_DEVICE" align="CENTER" x="0" y="0" width="450" height="450" alpha="0">
+        <Variant mode="AMBIENT" target="alpha" value="255"/>
+        <Font family="SYNC_TO_DEVICE" size="170" weight="LIGHT" slant="NORMAL" color="[CONFIGURATION.clockColor]"/>
       </TimeText>
     </DigitalClock>
-    <ComplicationSlot x="56" y="20" width="112" height="112" slotId="1" name="top_left_complication" displayName="top_left" supportedTypes="SHORT_TEXT">
+    <ComplicationSlot x="46" y="20" width="112" height="112" slotId="1" name="top_left_complication" displayName="top_left" supportedTypes="SHORT_TEXT">
       <DefaultProviderPolicy primaryProvider="com.google.android.gm/com.google.android.apps.gmail.wear.complications.UnreadEmailsComplicationService" primaryProviderType="SHORT_TEXT" defaultSystemProvider="SUNRISE_SUNSET" defaultSystemProviderType="SHORT_TEXT"/>
-      <BoundingRoundBox x="0" y="0" width="112" height="112" outlinePadding="2"/>
+      <BoundingRoundBox x="0" y="0" width="128" height="128" outlinePadding="2"/>
       <Complication type="SHORT_TEXT">
-        <Condition>
-          <Expressions>
-            <Expression name="shortText_monochromaticImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]></Expression>
-            <Expression name="shortText_title"><![CDATA[[COMPLICATION.TITLE] != null]]></Expression>
-          </Expressions>
-          <Compare expression="shortText_monochromaticImage">
-            <Condition>
-              <Expressions>
-                <Expression name="monochromatic_ambientImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] != null]]></Expression>
-                <Expression name="monochromatic_noAmbientImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] == null]]></Expression>
-              </Expressions>
-              <Compare expression="monochromatic_ambientImage">
-                <Group name="monochromatic_ambientImage" x="0" y="0" width="112" height="112" alpha="255">
-                  <ListConfiguration id="aod_mode">
-                    <ListOption id="time_only">
-                      <PartImage x="40" y="15" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="0"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="twenty_five_dimmed">
-                      <PartImage x="40" y="15" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="191"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="fifty_dimmed">
-                      <PartImage x="40" y="15" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="127"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="full">
-                      <PartImage x="40" y="15" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                  </ListConfiguration>
-                  <ListConfiguration id="aod_mode">
-                    <ListOption id="time_only">
-                      <PartText x="0" y="56" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="0"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="twenty_five_dimmed">
-                      <PartText x="0" y="56" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="191"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="fifty_dimmed">
-                      <PartText x="0" y="56" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="127"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="full">
-                      <PartText x="0" y="56" width="112" height="20" alpha="255">
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                  </ListConfiguration>
-                </Group>
-              </Compare>
-              <Compare expression="monochromatic_noAmbientImage">
-                <Group name="monochromatic_NoAmbientImage" x="0" y="0" width="112" height="112" alpha="255">
-                  <ListConfiguration id="aod_mode">
-                    <ListOption id="time_only">
-                      <PartImage x="40" y="15" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="0"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="twenty_five_dimmed">
-                      <PartImage x="40" y="15" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="191"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="fifty_dimmed">
-                      <PartImage x="40" y="15" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="127"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="full">
-                      <PartImage x="40" y="15" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                  </ListConfiguration>
-                  <ListConfiguration id="aod_mode">
-                    <ListOption id="time_only">
-                      <PartText x="0" y="56" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="0"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="twenty_five_dimmed">
-                      <PartText x="0" y="56" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="191"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="fifty_dimmed">
-                      <PartText x="0" y="56" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="127"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="full">
-                      <PartText x="0" y="56" width="112" height="20" alpha="255">
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                  </ListConfiguration>
-                </Group>
-              </Compare>
-            </Condition>
-          </Compare>
-          <Compare expression="shortText_title">
-            <Group name="shortText_title" x="0" y="0" width="200" height="200" alpha="255">
-              <ListConfiguration id="aod_mode">
-                <ListOption id="time_only">
-                  <PartText x="0" y="33" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="0"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="twenty_five_dimmed">
-                  <PartText x="0" y="33" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="191"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="fifty_dimmed">
-                  <PartText x="0" y="33" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="127"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="full">
-                  <PartText x="0" y="33" width="112" height="20">
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-              </ListConfiguration>
-              <ListConfiguration id="aod_mode">
-                <ListOption id="time_only">
-                  <PartText x="0" y="56" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="0"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="twenty_five_dimmed">
-                  <PartText x="0" y="56" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="191"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="fifty_dimmed">
-                  <PartText x="0" y="56" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="127"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="full">
-                  <PartText x="0" y="56" width="112" height="20">
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-              </ListConfiguration>
-            </Group>
-          </Compare>
-          <!-- Text, on its own, with no Icon or Title -->
-          <Default>
-            <Group name="default_text" x="0" y="0" width="112" height="112" alpha="255">
-              <ListConfiguration id="aod_mode">
-                <ListOption id="time_only">
-                  <PartText x="0" y="0" width="112" height="112" alpha="255">
-                    <Variant mode="AMBIENT" target="alpha" value="0"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="twenty_five_dimmed">
-                  <PartText x="0" y="0" width="112" height="112" alpha="255">
-                    <Variant mode="AMBIENT" target="alpha" value="191"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="fifty_dimmed">
-                  <PartText x="0" y="0" width="112" height="112" alpha="255">
-                    <Variant mode="AMBIENT" target="alpha" value="127"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="full">
-                  <PartText x="0" y="0" width="112" height="112" alpha="255">
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-              </ListConfiguration>
-            </Group>
-          </Default>
-        </Condition>
+        <!-- Text, on its own, with no Icon or Title -->
+        <Group name="default_text" x="0" y="0" width="128" height="128" alpha="255">
+          <ListConfiguration id="aod_mode">
+            <ListOption id="time_only">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="0"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="SYNC_TO_DEVICE" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="twenty_five_dimmed">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="191"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="SYNC_TO_DEVICE" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="fifty_dimmed">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="127"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="SYNC_TO_DEVICE" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="full">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="SYNC_TO_DEVICE" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+          </ListConfiguration>
+        </Group>
       </Complication>
     </ComplicationSlot>
-    <ComplicationSlot x="168" y="20" width="112" height="112" slotId="2" name="top_complication" displayName="top" supportedTypes="SHORT_TEXT">
+    <ComplicationSlot x="158" y="20" width="112" height="112" slotId="2" name="top_complication" displayName="top" supportedTypes="SHORT_TEXT">
       <DefaultProviderPolicy primaryProvider="com.google.android.gm/com.google.android.apps.gmail.wear.complications.UnreadEmailsComplicationService" primaryProviderType="SHORT_TEXT" defaultSystemProvider="SUNRISE_SUNSET" defaultSystemProviderType="SHORT_TEXT"/>
-      <BoundingRoundBox x="0" y="0" width="112" height="112" outlinePadding="2"/>
+      <BoundingRoundBox x="0" y="0" width="128" height="128" outlinePadding="2"/>
       <Complication type="SHORT_TEXT">
-        <Condition>
-          <Expressions>
-            <Expression name="shortText_monochromaticImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]></Expression>
-            <Expression name="shortText_title"><![CDATA[[COMPLICATION.TITLE] != null]]></Expression>
-          </Expressions>
-          <Compare expression="shortText_monochromaticImage">
-            <Condition>
-              <Expressions>
-                <Expression name="monochromatic_ambientImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] != null]]></Expression>
-                <Expression name="monochromatic_noAmbientImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] == null]]></Expression>
-              </Expressions>
-              <Compare expression="monochromatic_ambientImage">
-                <Group name="monochromatic_ambientImage" x="0" y="0" width="112" height="112" alpha="255">
-                  <ListConfiguration id="aod_mode">
-                    <ListOption id="time_only">
-                      <PartImage x="40" y="15" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="0"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="twenty_five_dimmed">
-                      <PartImage x="40" y="15" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="191"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="fifty_dimmed">
-                      <PartImage x="40" y="15" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="127"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="full">
-                      <PartImage x="40" y="15" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                  </ListConfiguration>
-                  <ListConfiguration id="aod_mode">
-                    <ListOption id="time_only">
-                      <PartText x="0" y="56" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="0"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="twenty_five_dimmed">
-                      <PartText x="0" y="56" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="191"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="fifty_dimmed">
-                      <PartText x="0" y="56" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="127"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="full">
-                      <PartText x="0" y="56" width="112" height="20" alpha="255">
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                  </ListConfiguration>
-                </Group>
-              </Compare>
-              <Compare expression="monochromatic_noAmbientImage">
-                <Group name="monochromatic_NoAmbientImage" x="0" y="0" width="112" height="112" alpha="255">
-                  <ListConfiguration id="aod_mode">
-                    <ListOption id="time_only">
-                      <PartImage x="40" y="15" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="0"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="twenty_five_dimmed">
-                      <PartImage x="40" y="15" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="191"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="fifty_dimmed">
-                      <PartImage x="40" y="15" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="127"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="full">
-                      <PartImage x="40" y="15" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                  </ListConfiguration>
-                  <ListConfiguration id="aod_mode">
-                    <ListOption id="time_only">
-                      <PartText x="0" y="56" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="0"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="twenty_five_dimmed">
-                      <PartText x="0" y="56" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="191"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="fifty_dimmed">
-                      <PartText x="0" y="56" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="127"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="full">
-                      <PartText x="0" y="56" width="112" height="20" alpha="255">
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                  </ListConfiguration>
-                </Group>
-              </Compare>
-            </Condition>
-          </Compare>
-          <Compare expression="shortText_title">
-            <Group name="shortText_title" x="0" y="0" width="200" height="200" alpha="255">
-              <ListConfiguration id="aod_mode">
-                <ListOption id="time_only">
-                  <PartText x="0" y="33" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="0"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="twenty_five_dimmed">
-                  <PartText x="0" y="33" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="191"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="fifty_dimmed">
-                  <PartText x="0" y="33" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="127"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="full">
-                  <PartText x="0" y="33" width="112" height="20">
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-              </ListConfiguration>
-              <ListConfiguration id="aod_mode">
-                <ListOption id="time_only">
-                  <PartText x="0" y="56" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="0"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="twenty_five_dimmed">
-                  <PartText x="0" y="56" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="191"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="fifty_dimmed">
-                  <PartText x="0" y="56" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="127"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="full">
-                  <PartText x="0" y="56" width="112" height="20">
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-              </ListConfiguration>
-            </Group>
-          </Compare>
-          <!-- Text, on its own, with no Icon or Title -->
-          <Default>
-            <Group name="default_text" x="0" y="0" width="112" height="112" alpha="255">
-              <ListConfiguration id="aod_mode">
-                <ListOption id="time_only">
-                  <PartText x="0" y="0" width="112" height="112" alpha="255">
-                    <Variant mode="AMBIENT" target="alpha" value="0"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="twenty_five_dimmed">
-                  <PartText x="0" y="0" width="112" height="112" alpha="255">
-                    <Variant mode="AMBIENT" target="alpha" value="191"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="fifty_dimmed">
-                  <PartText x="0" y="0" width="112" height="112" alpha="255">
-                    <Variant mode="AMBIENT" target="alpha" value="127"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="full">
-                  <PartText x="0" y="0" width="112" height="112" alpha="255">
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-              </ListConfiguration>
-            </Group>
-          </Default>
-        </Condition>
+        <!-- Text, on its own, with no Icon or Title -->
+        <Group name="default_text" x="0" y="0" width="128" height="128" alpha="255">
+          <ListConfiguration id="aod_mode">
+            <ListOption id="time_only">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="0"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="SYNC_TO_DEVICE" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="twenty_five_dimmed">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="191"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="SYNC_TO_DEVICE" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="fifty_dimmed">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="127"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="SYNC_TO_DEVICE" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="full">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="SYNC_TO_DEVICE" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+          </ListConfiguration>
+        </Group>
       </Complication>
     </ComplicationSlot>
-    <ComplicationSlot x="282" y="20" width="112" height="112" slotId="3" name="top_right_complication" displayName="top_right" supportedTypes="SHORT_TEXT">
+    <ComplicationSlot x="272" y="20" width="112" height="112" slotId="3" name="top_right_complication" displayName="top_right" supportedTypes="SHORT_TEXT">
       <DefaultProviderPolicy primaryProvider="com.google.android.gm/com.google.android.apps.gmail.wear.complications.UnreadEmailsComplicationService" primaryProviderType="SHORT_TEXT" defaultSystemProvider="SUNRISE_SUNSET" defaultSystemProviderType="SHORT_TEXT"/>
-      <BoundingRoundBox x="0" y="0" width="112" height="112" outlinePadding="2"/>
+      <BoundingRoundBox x="0" y="0" width="128" height="128" outlinePadding="2"/>
       <Complication type="SHORT_TEXT">
-        <Condition>
-          <Expressions>
-            <Expression name="shortText_monochromaticImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]></Expression>
-            <Expression name="shortText_title"><![CDATA[[COMPLICATION.TITLE] != null]]></Expression>
-          </Expressions>
-          <Compare expression="shortText_monochromaticImage">
-            <Condition>
-              <Expressions>
-                <Expression name="monochromatic_ambientImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] != null]]></Expression>
-                <Expression name="monochromatic_noAmbientImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] == null]]></Expression>
-              </Expressions>
-              <Compare expression="monochromatic_ambientImage">
-                <Group name="monochromatic_ambientImage" x="0" y="0" width="112" height="112" alpha="255">
-                  <ListConfiguration id="aod_mode">
-                    <ListOption id="time_only">
-                      <PartImage x="40" y="15" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="0"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="twenty_five_dimmed">
-                      <PartImage x="40" y="15" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="191"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="fifty_dimmed">
-                      <PartImage x="40" y="15" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="127"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="full">
-                      <PartImage x="40" y="15" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                  </ListConfiguration>
-                  <ListConfiguration id="aod_mode">
-                    <ListOption id="time_only">
-                      <PartText x="0" y="56" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="0"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="twenty_five_dimmed">
-                      <PartText x="0" y="56" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="191"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="fifty_dimmed">
-                      <PartText x="0" y="56" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="127"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="full">
-                      <PartText x="0" y="56" width="112" height="20" alpha="255">
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                  </ListConfiguration>
-                </Group>
-              </Compare>
-              <Compare expression="monochromatic_noAmbientImage">
-                <Group name="monochromatic_NoAmbientImage" x="0" y="0" width="112" height="112" alpha="255">
-                  <ListConfiguration id="aod_mode">
-                    <ListOption id="time_only">
-                      <PartImage x="40" y="15" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="0"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="twenty_five_dimmed">
-                      <PartImage x="40" y="15" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="191"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="fifty_dimmed">
-                      <PartImage x="40" y="15" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="127"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="full">
-                      <PartImage x="40" y="15" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                  </ListConfiguration>
-                  <ListConfiguration id="aod_mode">
-                    <ListOption id="time_only">
-                      <PartText x="0" y="56" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="0"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="twenty_five_dimmed">
-                      <PartText x="0" y="56" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="191"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="fifty_dimmed">
-                      <PartText x="0" y="56" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="127"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="full">
-                      <PartText x="0" y="56" width="112" height="20" alpha="255">
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                  </ListConfiguration>
-                </Group>
-              </Compare>
-            </Condition>
-          </Compare>
-          <Compare expression="shortText_title">
-            <Group name="shortText_title" x="0" y="0" width="200" height="200" alpha="255">
-              <ListConfiguration id="aod_mode">
-                <ListOption id="time_only">
-                  <PartText x="0" y="33" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="0"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="twenty_five_dimmed">
-                  <PartText x="0" y="33" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="191"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="fifty_dimmed">
-                  <PartText x="0" y="33" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="127"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="full">
-                  <PartText x="0" y="33" width="112" height="20">
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-              </ListConfiguration>
-              <ListConfiguration id="aod_mode">
-                <ListOption id="time_only">
-                  <PartText x="0" y="56" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="0"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="twenty_five_dimmed">
-                  <PartText x="0" y="56" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="191"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="fifty_dimmed">
-                  <PartText x="0" y="56" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="127"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="full">
-                  <PartText x="0" y="56" width="112" height="20">
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-              </ListConfiguration>
-            </Group>
-          </Compare>
-          <!-- Text, on its own, with no Icon or Title -->
-          <Default>
-            <Group name="default_text" x="0" y="0" width="112" height="112" alpha="255">
-              <ListConfiguration id="aod_mode">
-                <ListOption id="time_only">
-                  <PartText x="0" y="0" width="112" height="112" alpha="255">
-                    <Variant mode="AMBIENT" target="alpha" value="0"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="twenty_five_dimmed">
-                  <PartText x="0" y="0" width="112" height="112" alpha="255">
-                    <Variant mode="AMBIENT" target="alpha" value="191"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="fifty_dimmed">
-                  <PartText x="0" y="0" width="112" height="112" alpha="255">
-                    <Variant mode="AMBIENT" target="alpha" value="127"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="full">
-                  <PartText x="0" y="0" width="112" height="112" alpha="255">
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-              </ListConfiguration>
-            </Group>
-          </Default>
-        </Condition>
+        <!-- Text, on its own, with no Icon or Title -->
+        <Group name="default_text" x="0" y="0" width="128" height="128" alpha="255">
+          <ListConfiguration id="aod_mode">
+            <ListOption id="time_only">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="0"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="SYNC_TO_DEVICE" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="twenty_five_dimmed">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="191"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="SYNC_TO_DEVICE" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="fifty_dimmed">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="127"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="SYNC_TO_DEVICE" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="full">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="SYNC_TO_DEVICE" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+          </ListConfiguration>
+        </Group>
       </Complication>
     </ComplicationSlot>
-    <ComplicationSlot x="56" y="325" width="112" height="112" slotId="4" name="bottom_left_complication" displayName="bottom_left" supportedTypes="SHORT_TEXT">
+    <ComplicationSlot x="46" y="300" width="112" height="112" slotId="4" name="bottom_left_complication" displayName="bottom_left" supportedTypes="SHORT_TEXT">
       <DefaultProviderPolicy primaryProvider="com.google.android.gm/com.google.android.apps.gmail.wear.complications.UnreadEmailsComplicationService" primaryProviderType="SHORT_TEXT" defaultSystemProvider="SUNRISE_SUNSET" defaultSystemProviderType="SHORT_TEXT"/>
-      <BoundingRoundBox x="0" y="0" width="112" height="112" outlinePadding="2"/>
+      <BoundingRoundBox x="0" y="0" width="128" height="128" outlinePadding="2"/>
       <Complication type="SHORT_TEXT">
-        <Condition>
-          <Expressions>
-            <Expression name="shortText_monochromaticImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]></Expression>
-            <Expression name="shortText_title"><![CDATA[[COMPLICATION.TITLE] != null]]></Expression>
-          </Expressions>
-          <Compare expression="shortText_monochromaticImage">
-            <Condition>
-              <Expressions>
-                <Expression name="monochromatic_ambientImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] != null]]></Expression>
-                <Expression name="monochromatic_noAmbientImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] == null]]></Expression>
-              </Expressions>
-              <Compare expression="monochromatic_ambientImage">
-                <Group name="monochromatic_ambientImage" x="0" y="0" width="112" height="112" alpha="255">
-                  <ListConfiguration id="aod_mode">
-                    <ListOption id="time_only">
-                      <PartText x="0" y="20" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="0"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="twenty_five_dimmed">
-                      <PartText x="0" y="20" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="191"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="fifty_dimmed">
-                      <PartText x="0" y="20" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="127"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="full">
-                      <PartText x="0" y="20" width="112" height="20" alpha="255">
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                  </ListConfiguration>
-                  <ListConfiguration id="aod_mode">
-                    <ListOption id="time_only">
-                      <PartImage x="40" y="56" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="0"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="twenty_five_dimmed">
-                      <PartImage x="40" y="56" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="191"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="fifty_dimmed">
-                      <PartImage x="40" y="56" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="127"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="full">
-                      <PartImage x="40" y="56" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                  </ListConfiguration>
-                </Group>
-              </Compare>
-              <Compare expression="monochromatic_noAmbientImage">
-                <Group name="monochromatic_noAmbientImage" x="0" y="0" width="112" height="112" alpha="255">
-                  <ListConfiguration id="aod_mode">
-                    <ListOption id="time_only">
-                      <PartText x="0" y="20" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="0"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="twenty_five_dimmed">
-                      <PartText x="0" y="20" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="191"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="fifty_dimmed">
-                      <PartText x="0" y="20" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="127"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="full">
-                      <PartText x="0" y="20" width="112" height="20" alpha="255">
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                  </ListConfiguration>
-                  <ListConfiguration id="aod_mode">
-                    <ListOption id="time_only">
-                      <PartImage x="40" y="56" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="0"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="twenty_five_dimmed">
-                      <PartImage x="40" y="56" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="191"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="fifty_dimmed">
-                      <PartImage x="40" y="56" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="127"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="full">
-                      <PartImage x="40" y="56" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                  </ListConfiguration>
-                </Group>
-              </Compare>
-            </Condition>
-          </Compare>
-          <Compare expression="shortText_title">
-            <Group name="shortText_title" x="0" y="0" width="200" height="200" alpha="255">
-              <ListConfiguration id="aod_mode">
-                <ListOption id="time_only">
-                  <PartText x="0" y="33" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="0"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="twenty_five_dimmed">
-                  <PartText x="0" y="33" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="191"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="fifty_dimmed">
-                  <PartText x="0" y="33" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="127"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="full">
-                  <PartText x="0" y="33" width="112" height="20">
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-              </ListConfiguration>
-              <ListConfiguration id="aod_mode">
-                <ListOption id="time_only">
-                  <PartText x="0" y="56" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="0"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="twenty_five_dimmed">
-                  <PartText x="0" y="56" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="191"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="fifty_dimmed">
-                  <PartText x="0" y="56" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="127"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="full">
-                  <PartText x="0" y="56" width="112" height="20">
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-              </ListConfiguration>
-            </Group>
-          </Compare>
-          <!-- Text, on its own, with no Icon or Title -->
-          <Default>
-            <Group name="textOnly" x="0" y="0" width="200" height="200" alpha="255">
-              <ListConfiguration id="aod_mode">
-                <ListOption id="time_only">
-                  <PartText x="0" y="0" width="112" height="112" alpha="255">
-                    <Variant mode="AMBIENT" target="alpha" value="0"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="twenty_five_dimmed">
-                  <PartText x="0" y="0" width="112" height="112" alpha="255">
-                    <Variant mode="AMBIENT" target="alpha" value="191"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="fifty_dimmed">
-                  <PartText x="0" y="0" width="112" height="112" alpha="255">
-                    <Variant mode="AMBIENT" target="alpha" value="127"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="full">
-                  <PartText x="0" y="0" width="112" height="112" alpha="255">
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-              </ListConfiguration>
-            </Group>
-          </Default>
-        </Condition>
+        <!-- Text, on its own, with no Icon or Title -->
+        <Group name="textOnly" x="0" y="0" width="128" height="128" alpha="255">
+          <ListConfiguration id="aod_mode">
+            <ListOption id="time_only">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="0"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="SYNC_TO_DEVICE" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="twenty_five_dimmed">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="191"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="SYNC_TO_DEVICE" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="fifty_dimmed">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="127"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="SYNC_TO_DEVICE" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="full">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="SYNC_TO_DEVICE" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+          </ListConfiguration>
+        </Group>
       </Complication>
     </ComplicationSlot>
-    <ComplicationSlot x="168" y="325" width="112" height="112" slotId="5" name="bottom_complication" displayName="bottom" supportedTypes="SHORT_TEXT">
+    <ComplicationSlot x="158" y="300" width="112" height="112" slotId="5" name="bottom_complication" displayName="bottom" supportedTypes="SHORT_TEXT">
       <DefaultProviderPolicy primaryProvider="com.google.android.gm/com.google.android.apps.gmail.wear.complications.UnreadEmailsComplicationService" primaryProviderType="SHORT_TEXT" defaultSystemProvider="SUNRISE_SUNSET" defaultSystemProviderType="SHORT_TEXT"/>
-      <BoundingRoundBox x="0" y="0" width="112" height="112" outlinePadding="2"/>
+      <BoundingRoundBox x="0" y="0" width="128" height="128" outlinePadding="2"/>
       <Complication type="SHORT_TEXT">
-        <Condition>
-          <Expressions>
-            <Expression name="shortText_monochromaticImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]></Expression>
-            <Expression name="shortText_title"><![CDATA[[COMPLICATION.TITLE] != null]]></Expression>
-          </Expressions>
-          <Compare expression="shortText_monochromaticImage">
-            <Condition>
-              <Expressions>
-                <Expression name="monochromatic_ambientImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] != null]]></Expression>
-                <Expression name="monochromatic_noAmbientImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] == null]]></Expression>
-              </Expressions>
-              <Compare expression="monochromatic_ambientImage">
-                <Group name="monochromatic_ambientImage" x="0" y="0" width="112" height="112" alpha="255">
-                  <ListConfiguration id="aod_mode">
-                    <ListOption id="time_only">
-                      <PartText x="0" y="20" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="0"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="twenty_five_dimmed">
-                      <PartText x="0" y="20" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="191"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="fifty_dimmed">
-                      <PartText x="0" y="20" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="127"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="full">
-                      <PartText x="0" y="20" width="112" height="20" alpha="255">
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                  </ListConfiguration>
-                  <ListConfiguration id="aod_mode">
-                    <ListOption id="time_only">
-                      <PartImage x="40" y="56" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="0"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="twenty_five_dimmed">
-                      <PartImage x="40" y="56" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="191"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="fifty_dimmed">
-                      <PartImage x="40" y="56" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="127"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="full">
-                      <PartImage x="40" y="56" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                  </ListConfiguration>
-                </Group>
-              </Compare>
-              <Compare expression="monochromatic_noAmbientImage">
-                <Group name="monochromatic_noAmbientImage" x="0" y="0" width="112" height="112" alpha="255">
-                  <ListConfiguration id="aod_mode">
-                    <ListOption id="time_only">
-                      <PartText x="0" y="20" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="0"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="twenty_five_dimmed">
-                      <PartText x="0" y="20" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="191"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="fifty_dimmed">
-                      <PartText x="0" y="20" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="127"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="full">
-                      <PartText x="0" y="20" width="112" height="20" alpha="255">
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                  </ListConfiguration>
-                  <ListConfiguration id="aod_mode">
-                    <ListOption id="time_only">
-                      <PartImage x="40" y="56" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="0"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="twenty_five_dimmed">
-                      <PartImage x="40" y="56" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="191"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="fifty_dimmed">
-                      <PartImage x="40" y="56" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="127"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="full">
-                      <PartImage x="40" y="56" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                  </ListConfiguration>
-                </Group>
-              </Compare>
-            </Condition>
-          </Compare>
-          <Compare expression="shortText_title">
-            <Group name="shortText_title" x="0" y="0" width="200" height="200" alpha="255">
-              <ListConfiguration id="aod_mode">
-                <ListOption id="time_only">
-                  <PartText x="0" y="33" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="0"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="twenty_five_dimmed">
-                  <PartText x="0" y="33" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="191"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="fifty_dimmed">
-                  <PartText x="0" y="33" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="127"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="full">
-                  <PartText x="0" y="33" width="112" height="20">
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-              </ListConfiguration>
-              <ListConfiguration id="aod_mode">
-                <ListOption id="time_only">
-                  <PartText x="0" y="56" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="0"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="twenty_five_dimmed">
-                  <PartText x="0" y="56" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="191"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="fifty_dimmed">
-                  <PartText x="0" y="56" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="127"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="full">
-                  <PartText x="0" y="56" width="112" height="20">
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-              </ListConfiguration>
-            </Group>
-          </Compare>
-          <!-- Text, on its own, with no Icon or Title -->
-          <Default>
-            <Group name="textOnly" x="0" y="0" width="200" height="200" alpha="255">
-              <ListConfiguration id="aod_mode">
-                <ListOption id="time_only">
-                  <PartText x="0" y="0" width="112" height="112" alpha="255">
-                    <Variant mode="AMBIENT" target="alpha" value="0"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="twenty_five_dimmed">
-                  <PartText x="0" y="0" width="112" height="112" alpha="255">
-                    <Variant mode="AMBIENT" target="alpha" value="191"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="fifty_dimmed">
-                  <PartText x="0" y="0" width="112" height="112" alpha="255">
-                    <Variant mode="AMBIENT" target="alpha" value="127"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="full">
-                  <PartText x="0" y="0" width="112" height="112" alpha="255">
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-              </ListConfiguration>
-            </Group>
-          </Default>
-        </Condition>
+        <!-- Text, on its own, with no Icon or Title -->
+        <Group name="textOnly" x="0" y="0" width="128" height="128" alpha="255">
+          <ListConfiguration id="aod_mode">
+            <ListOption id="time_only">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="0"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="SYNC_TO_DEVICE" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="twenty_five_dimmed">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="191"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="SYNC_TO_DEVICE" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="fifty_dimmed">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="127"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="SYNC_TO_DEVICE" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="full">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="SYNC_TO_DEVICE" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+          </ListConfiguration>
+        </Group>
       </Complication>
     </ComplicationSlot>
-    <ComplicationSlot x="282" y="325" width="112" height="112" slotId="6" name="bottom_right_complication" displayName="bottom_right" supportedTypes="SHORT_TEXT">
+    <ComplicationSlot x="272" y="300" width="112" height="112" slotId="6" name="bottom_right_complication" displayName="bottom_right" supportedTypes="SHORT_TEXT">
       <DefaultProviderPolicy primaryProvider="com.google.android.gm/com.google.android.apps.gmail.wear.complications.UnreadEmailsComplicationService" primaryProviderType="SHORT_TEXT" defaultSystemProvider="SUNRISE_SUNSET" defaultSystemProviderType="SHORT_TEXT"/>
-      <BoundingRoundBox x="0" y="0" width="112" height="112" outlinePadding="2"/>
+      <BoundingRoundBox x="0" y="0" width="128" height="128" outlinePadding="2"/>
       <Complication type="SHORT_TEXT">
-        <Condition>
-          <Expressions>
-            <Expression name="shortText_monochromaticImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null]]></Expression>
-            <Expression name="shortText_title"><![CDATA[[COMPLICATION.TITLE] != null]]></Expression>
-          </Expressions>
-          <Compare expression="shortText_monochromaticImage">
-            <Condition>
-              <Expressions>
-                <Expression name="monochromatic_ambientImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] != null]]></Expression>
-                <Expression name="monochromatic_noAmbientImage"><![CDATA[[COMPLICATION.MONOCHROMATIC_IMAGE] != null && [COMPLICATION.MONOCHROMATIC_IMAGE_AMBIENT] == null]]></Expression>
-              </Expressions>
-              <Compare expression="monochromatic_ambientImage">
-                <Group name="monochromatic_ambientImage" x="0" y="0" width="112" height="112" alpha="255">
-                  <ListConfiguration id="aod_mode">
-                    <ListOption id="time_only">
-                      <PartText x="0" y="20" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="0"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="twenty_five_dimmed">
-                      <PartText x="0" y="20" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="191"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="fifty_dimmed">
-                      <PartText x="0" y="20" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="127"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="full">
-                      <PartText x="0" y="20" width="112" height="20" alpha="255">
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                  </ListConfiguration>
-                  <ListConfiguration id="aod_mode">
-                    <ListOption id="time_only">
-                      <PartImage x="40" y="56" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="0"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="twenty_five_dimmed">
-                      <PartImage x="40" y="56" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="191"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="fifty_dimmed">
-                      <PartImage x="40" y="56" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="127"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="full">
-                      <PartImage x="40" y="56" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                  </ListConfiguration>
-                </Group>
-              </Compare>
-              <Compare expression="monochromatic_noAmbientImage">
-                <Group name="monochromatic_noAmbientImage" x="0" y="0" width="112" height="112" alpha="255">
-                  <ListConfiguration id="aod_mode">
-                    <ListOption id="time_only">
-                      <PartText x="0" y="20" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="0"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="twenty_five_dimmed">
-                      <PartText x="0" y="20" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="191"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="fifty_dimmed">
-                      <PartText x="0" y="20" width="112" height="20" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="127"/>
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                    <ListOption id="full">
-                      <PartText x="0" y="20" width="112" height="20" alpha="255">
-                        <Text align="CENTER" ellipsis="TRUE">
-                          <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                            <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                          </Font>
-                        </Text>
-                      </PartText>
-                    </ListOption>
-                  </ListConfiguration>
-                  <ListConfiguration id="aod_mode">
-                    <ListOption id="time_only">
-                      <PartImage x="40" y="56" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="0"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="twenty_five_dimmed">
-                      <PartImage x="40" y="56" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="191"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="fifty_dimmed">
-                      <PartImage x="40" y="56" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Variant mode="AMBIENT" target="alpha" value="127"/>
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                    <ListOption id="full">
-                      <PartImage x="40" y="56" width="32" height="32" tintColor="[CONFIGURATION.complicationColor]" alpha="255">
-                        <Image resource="[COMPLICATION.MONOCHROMATIC_IMAGE]"/>
-                      </PartImage>
-                    </ListOption>
-                  </ListConfiguration>
-                </Group>
-              </Compare>
-            </Condition>
-          </Compare>
-          <Compare expression="shortText_title">
-            <Group name="shortText_title" x="0" y="0" width="200" height="200" alpha="255">
-              <ListConfiguration id="aod_mode">
-                <ListOption id="time_only">
-                  <PartText x="0" y="33" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="0"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="twenty_five_dimmed">
-                  <PartText x="0" y="33" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="191"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="fifty_dimmed">
-                  <PartText x="0" y="33" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="127"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="full">
-                  <PartText x="0" y="33" width="112" height="20">
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="20" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TITLE]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-              </ListConfiguration>
-              <ListConfiguration id="aod_mode">
-                <ListOption id="time_only">
-                  <PartText x="0" y="56" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="0"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="twenty_five_dimmed">
-                  <PartText x="0" y="56" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="191"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="fifty_dimmed">
-                  <PartText x="0" y="56" width="112" height="20">
-                    <Variant mode="AMBIENT" target="alpha" value="127"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="full">
-                  <PartText x="0" y="56" width="112" height="20">
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-              </ListConfiguration>
-            </Group>
-          </Compare>
-          <!-- Text, on its own, with no Icon or Title -->
-          <Default>
-            <Group name="textOnly" x="0" y="0" width="200" height="200" alpha="255">
-              <ListConfiguration id="aod_mode">
-                <ListOption id="time_only">
-                  <PartText x="0" y="0" width="112" height="112" alpha="255">
-                    <Variant mode="AMBIENT" target="alpha" value="0"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="twenty_five_dimmed">
-                  <PartText x="0" y="0" width="112" height="112" alpha="255">
-                    <Variant mode="AMBIENT" target="alpha" value="191"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="fifty_dimmed">
-                  <PartText x="0" y="0" width="112" height="112" alpha="255">
-                    <Variant mode="AMBIENT" target="alpha" value="127"/>
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-                <ListOption id="full">
-                  <PartText x="0" y="0" width="112" height="112" alpha="255">
-                    <Text align="CENTER" ellipsis="TRUE">
-                      <Font family="SYNC_TO_DEVICE" size="28" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-                        <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-                      </Font>
-                    </Text>
-                  </PartText>
-                </ListOption>
-              </ListConfiguration>
-            </Group>
-          </Default>
-        </Condition>
+        <!-- Text, on its own, with no Icon or Title -->
+        <Group name="textOnly" x="0" y="0" width="128" height="128" alpha="255">
+          <ListConfiguration id="aod_mode">
+            <ListOption id="time_only">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="0"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="SYNC_TO_DEVICE" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="twenty_five_dimmed">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="191"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="SYNC_TO_DEVICE" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="fifty_dimmed">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="127"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="SYNC_TO_DEVICE" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="full">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="SYNC_TO_DEVICE" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+          </ListConfiguration>
+        </Group>
       </Complication>
     </ComplicationSlot>
   </Scene>
