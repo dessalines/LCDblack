@@ -8,7 +8,7 @@
         <PartText x="0" y="0" width="128" height="128" alpha="255">
           <Variant mode="AMBIENT" target="alpha" value="0"/>
           <Text align="CENTER" ellipsis="TRUE">
-            <Font family="SYNC_TO_DEVICE" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+            <Font family="d7" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
               <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
             </Font>
           </Text>
@@ -18,7 +18,7 @@
         <PartText x="0" y="0" width="128" height="128" alpha="255">
           <Variant mode="AMBIENT" target="alpha" value="191"/>
           <Text align="CENTER" ellipsis="TRUE">
-            <Font family="SYNC_TO_DEVICE" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+            <Font family="d7" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
               <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
             </Font>
           </Text>
@@ -28,7 +28,7 @@
         <PartText x="0" y="0" width="128" height="128" alpha="255">
           <Variant mode="AMBIENT" target="alpha" value="127"/>
           <Text align="CENTER" ellipsis="TRUE">
-            <Font family="SYNC_TO_DEVICE" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+            <Font family="d7" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
               <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
             </Font>
           </Text>
@@ -37,7 +37,7 @@
       <ListOption id="full">
         <PartText x="0" y="0" width="128" height="128" alpha="255">
           <Text align="CENTER" ellipsis="TRUE">
-            <Font family="SYNC_TO_DEVICE" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+            <Font family="d7" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
               <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
             </Font>
           </Text>
