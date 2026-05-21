@@ -1,0 +1,5 @@
+<DefaultProviderPolicy primaryProvider="com.google.android.gm/com.google.android.apps.gmail.wear.complications.UnreadEmailsComplicationService"
+primaryProviderType="SHORT_TEXT"
+defaultSystemProvider="SUNRISE_SUNSET"
+defaultSystemProviderType="SHORT_TEXT" />
+<BoundingRoundBox x="0" y="0" width="128" height="128" outlinePadding="2" />

@@ -8,4 +8,10 @@
     <string name="twenty_five_dimmed_label">25%%</string>
     <string name="fifty_dimmed_label">50%%</string>
     <string name="full_label">Full</string>
+    <string name="font_label">Font</string>
+    <string name="default_label">Default</string>
+    <string name="d7_label">D7</string>
+    <string name="garamond_label">Garamond</string>
+    <string name="ubuntu_label">Ubuntu</string>
+    <string name="saira_label">Saira</string>
 </resources>

@@ -1,47 +1,244 @@
-<DefaultProviderPolicy primaryProvider="com.google.android.gm/com.google.android.apps.gmail.wear.complications.UnreadEmailsComplicationService" primaryProviderType="SHORT_TEXT" defaultSystemProvider="SUNRISE_SUNSET" defaultSystemProviderType="SHORT_TEXT"/>
-<BoundingRoundBox x="0" y="0" width="128" height="128" outlinePadding="2"/>
 <Complication type="SHORT_TEXT">
-  <!-- Text, on its own, with no Icon or Title -->
   <Group name="textOnly" x="0" y="0" width="128" height="128" alpha="255">
     <ListConfiguration id="aod_mode">
       <ListOption id="time_only">
-        <PartText x="0" y="0" width="128" height="128" alpha="255">
-          <Variant mode="AMBIENT" target="alpha" value="0"/>
-          <Text align="CENTER" ellipsis="TRUE">
-            <Font family="d7" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-              <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-            </Font>
-          </Text>
-        </PartText>
+        <Group name="default_font" x="0" y="0" width="128" height="128" alpha="255">
+          <ListConfiguration id="font">
+            <ListOption id="default">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="0"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="default" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s
+              <Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="d7">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="0"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="d7" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s
+              <Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="garamond">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="0"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="garamond" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s
+              <Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="ubuntu">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="0"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="ubuntu" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s
+              <Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="saira">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="0"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="saira" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s
+              <Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+          </ListConfiguration>
+        </Group>
       </ListOption>
       <ListOption id="twenty_five_dimmed">
-        <PartText x="0" y="0" width="128" height="128" alpha="255">
-          <Variant mode="AMBIENT" target="alpha" value="191"/>
-          <Text align="CENTER" ellipsis="TRUE">
-            <Font family="d7" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-              <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-            </Font>
-          </Text>
-        </PartText>
+        <Group name="default_font" x="0" y="0" width="128" height="128" alpha="255">
+          <ListConfiguration id="font">
+            <ListOption id="default">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="191"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="default" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s
+              <Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="d7">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="191"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="d7" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s
+              <Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="garamond">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="191"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="garamond" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s
+              <Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="ubuntu">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="191"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="ubuntu" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s
+              <Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="saira">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="191"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="saira" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s
+              <Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+          </ListConfiguration>
+        </Group>
       </ListOption>
       <ListOption id="fifty_dimmed">
-        <PartText x="0" y="0" width="128" height="128" alpha="255">
-          <Variant mode="AMBIENT" target="alpha" value="127"/>
-          <Text align="CENTER" ellipsis="TRUE">
-            <Font family="d7" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-              <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-            </Font>
-          </Text>
-        </PartText>
+        <Group name="default_font" x="0" y="0" width="128" height="128" alpha="255">
+          <ListConfiguration id="font">
+            <ListOption id="default">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="127"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="default" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s
+              <Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="d7">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="127"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="d7" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s
+              <Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="garamond">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="127"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="garamond" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s
+              <Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="ubuntu">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="127"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="ubuntu" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s
+              <Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="saira">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Variant mode="AMBIENT" target="alpha" value="127"/>
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="saira" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s
+              <Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+          </ListConfiguration>
+        </Group>
       </ListOption>
       <ListOption id="full">
-        <PartText x="0" y="0" width="128" height="128" alpha="255">
-          <Text align="CENTER" ellipsis="TRUE">
-            <Font family="d7" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
-              <Template>%s<Parameter expression="[COMPLICATION.TEXT]"/></Template>
-            </Font>
-          </Text>
-        </PartText>
+        <Group name="default_font" x="0" y="0" width="128" height="128" alpha="255">
+          <ListConfiguration id="font">
+            <ListOption id="default">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="default" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s
+              <Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="d7">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="d7" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s
+              <Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="garamond">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="garamond" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s
+              <Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="ubuntu">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="ubuntu" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s
+              <Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+            <ListOption id="saira">
+              <PartText x="0" y="0" width="128" height="128" alpha="255">
+                <Text align="CENTER" ellipsis="TRUE">
+                  <Font family="saira" size="44" weight="NORMAL" slant="NORMAL" color="[CONFIGURATION.textColor]">
+                    <Template>%s
+              <Parameter expression="[COMPLICATION.TEXT]"/></Template>
+                  </Font>
+                </Text>
+              </PartText>
+            </ListOption>
+          </ListConfiguration>
+        </Group>
       </ListOption>
     </ListConfiguration>
   </Group>
